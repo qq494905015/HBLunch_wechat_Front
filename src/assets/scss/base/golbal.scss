@@ -1,0 +1,282 @@
+@import "../helpers/mixin";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.page-con {
+  padding: 15px;
+  max-width: 540px;
+  margin: 0 auto;
+  min-width: 320px;
+}
+
+.btn {
+  height: 35px;
+  background-color: $color-primary;
+  color: #333;
+  border-radius: $radius-normal;
+  display: block;
+  width: 100%;
+}
+
+.btn-air {
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  border-radius: $radius-normal;
+}
+
+.login-bg {
+  height: 100vh;
+  background: url("./assets/img/login-bg.png") center / cover no-repeat;
+}
+
+.login-con {
+  padding: 100px - 15 50px - 15 0;
+}
+
+.login-form {
+  background-color: rgba(#000, .4);
+  border-radius: 5px;
+  padding: 20px 15px;
+  .logo {
+    display: block;
+    height: 75px;
+    width: 75px;
+    margin: -58px auto 0;
+  }
+}
+
+.form-group {
+  display: flex;
+  line-height: 35px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  label {
+    width: 75px;
+    text-align: right;
+  }
+  input {
+    flex-grow: 1;
+    border: 1px solid $gray-dark;
+    border-radius: $radius-normal;
+    padding: 0 5px;
+  }
+  textarea {
+    flex-grow: 1;
+    border: 1px solid $gray-dark;
+    border-radius: $radius-normal;
+    padding: 5px;
+    height: 120px;
+  }
+  .code {
+    width: 75px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  select {
+    border: 1px solid $gray-dark;
+    border-radius: $radius-normal;
+    width: 70px;
+    display: block;
+    background-color: #ffffff;
+  }
+  .vux-datetime {
+    display: block;
+    flex-grow: 1;
+    padding: 0;
+    height: 35px;
+    input {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.login-group {
+  display: flex;
+  line-height: 25px;
+  margin-top: 20px;
+  border-bottom: 1px solid #999;
+  padding: 1px 0;
+  input {
+    color: #ffffff;
+    flex-grow: 1;
+    background-color: transparent;
+    width: 1%;
+    &::placeholder {
+      color: $gray-lighter;
+    }
+  }
+  label {
+    width: 20px;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+
+.txt-box {
+  h2 {
+    font-size: 15px;
+    line-height: 2.5;
+    text-align: center;
+  }
+  p {
+    color: #666666;
+    line-height: 1.8;
+  }
+}
+
+.txt-con2 p {
+  text-indent: 2em;
+}
+
+.price-list {
+  font-size: 15px;
+  overflow: hidden;
+  dt {
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  dd {
+    float: left;
+    border: 1px solid $gray-dark;
+    border-radius: $radius-normal;
+    text-align: center;
+    line-height: 34px;
+    width: 31%;
+    margin-right: 3.5%;
+    margin-bottom: 10px;
+    &:nth-child(3n+1) {
+      margin-right: 0;
+    }
+  }
+}
+
+.apply-search {
+  @extend .doubleBorder;
+  border-bottom: 10px solid $gray-lighter;
+  padding: .3rem;
+  .form {
+    display: flex;
+    height: 35px;
+    @extend .thumbBorder;
+  }
+  input {
+    display: block;
+    flex-grow: 1;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
+  button {
+    background: url("./assets/img/icon-search.png") center / 18px no-repeat $color-primary;
+    display: block;
+    width: 40px;
+    height: 34px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.mine-money {
+  @extend .topBorder;
+  padding: 15px;
+  p {
+    flex-grow: 1;
+    line-height: 25px;
+  }
+  a {
+    display: block;
+    width: 65px;
+    text-align: center;
+    height: 25px;
+    line-height: 23px;
+    font-size: 13px;
+  }
+  li {
+    display: flex;
+    margin-bottom: 15px;
+  }
+}
+
+.user-list {
+  padding: 0;
+  .apply-search:before {
+    display: none;
+  }
+  ul {
+    font-size: 15px;
+  }
+  li {
+    @extend .bottomBorder;
+    display: flex;
+    line-height: 50px;
+    padding: 0 15px;
+    p {
+      flex-grow: 1;
+      width: 1%;
+      @include ellipsis(1);
+      &:nth-child(2) {
+        text-align: center;
+      }
+      &:nth-child(3) {
+        text-align: right;
+      }
+    }
+    &:first-child {
+      color: #999;
+    }
+  }
+}
+
+.img-warp {
+  position: relative;
+  padding-top: 100%;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.btn-block {
+  height: 35px;
+  background-color: #fec963;
+  color: #333;
+  border-radius: 3px;
+  display: block;
+  text-align: center;
+  line-height: 35px;
+  margin: 15px;
+}
+
+.form-group {
+
+}
+
+.apply-form {
+  .weui-cell {
+    padding: 0;
+  }
+}

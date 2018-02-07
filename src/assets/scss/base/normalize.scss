@@ -1,0 +1,127 @@
+@import "../helpers/variables";
+
+/* ==========================================================================
+ 有即是无，无即是有
+ ========================================================================== */
+body, dl, dd, /* dt, 默认没边距 */
+ul, ol, /*li, 默认没边距 */
+h1, h2, h3, h4, h5, h6, pre, /* code, 默认没边距 */
+form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu, dir,
+thead, tbody, tfoot, th, td /* th, td 默认 padding:1px */
+{
+  margin: 0;
+  padding: 0;
+}
+
+/**
+* 非大面积文字排版网站通常不需要列表项，如果需要可单独设置
+*/
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+ 链接
+ ========================================================================== */
+
+/**
+* 1. 去除链接默认的下划线，提高文字可读性
+*/
+a {
+  text-decoration: none; /* 1 */
+  color: $link-color;
+}
+
+/**
+* 去掉点击时的焦点框，同时保证使用键盘可以显示焦点框
+*/
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/* ==========================================================================
+ 字体和基础排版
+ ========================================================================== */
+
+/**
+* 1.防止 iOS 横屏字号放大，同时保证在PC上 zoom 功能正常
+*/
+html {
+  text-size-adjust: 100%; /* 1 */
+  font-size: 62.5%; /* 10/16=62.5% */
+}
+
+body {
+  background-color: $body-bg-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+body,
+button, input, select, textarea {
+  line-height: $global-line-height;
+  font-size: $global-font-size;
+}
+
+/* ==========================================================================
+ 嵌入元素
+ ========================================================================== */
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/**
+* 重置按钮禁用时光标样式
+*/
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/**
+* 1.移除 OS X 中 Safari5 和 Chrome 搜索框内侧的左边距
+* 2.如果需要隐藏清除按钮需要加上
+ input[type="search"]::-webkit-search-cancel-button
+*/
+input[type="search"]::-webkit-search-decoration /* 1 */
+{
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: vertical; /* 2 */
+}
+
+/**
+* label 元素给予手型，暗示此处可点击
+*/
+label {
+  cursor: pointer;
+}
+
+i, em {
+  font-style: normal;
+}
+
+input, button, textarea, select {
+  outline: none;
+  border: none;
+}
+
+input[type="text"] ，input[type="number"], textarea {
+  -webkit-appearance: none;
+}

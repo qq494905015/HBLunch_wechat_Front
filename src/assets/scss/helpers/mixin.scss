@@ -1,0 +1,55 @@
+@import "variables";
+@import "1px";
+
+.clearfix {
+  &:after, &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin ellipsis($line:1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $line == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin autoScroll($direction: auto) {
+  -webkit-overflow-scrolling: touch;
+  @if $direction == auto {
+    overflow: auto;
+  } @else {
+    overflow-#{$direction}: auto;
+  }
+}
+
+%vertical {
+  display: flex;
+  align-items: center;
+}
+%vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%center {
+  display: flex;
+  justify-content: center;
+}
