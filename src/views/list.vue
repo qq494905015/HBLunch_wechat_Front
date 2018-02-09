@@ -1,6 +1,6 @@
 <template>
   <div class="page-con">
-    <p class="my-location" @click="getLocation">{{location ? location : '获取失败，点击重新获取'}}</p>
+    <p class="my-location" @click="getLocation">{{location ? location : '获取位置中(可以点击刷新最新位置)'}}</p>
     <ul class="shop-list">
       <li v-for="shop in shops">
         <router-link :to="{ name: 'detail', query: { id: shop.id }}">
